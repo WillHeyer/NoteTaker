@@ -48,6 +48,7 @@ const handleNoteSave = function () {
   const newNote = {
     title: $noteTitle.val(),
     text: $noteText.val(),
+    id: Date.now()
   };
 
   saveNote(newNote).then(() => {
@@ -80,7 +81,6 @@ const handleNewNoteView = function () {
   activeNote = {};
   renderActiveNote();
 };
-
 
 const handleRenderSaveBtn = function () {
   if (!$noteTitle.val().trim() || !$noteText.val().trim()) {
